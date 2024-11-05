@@ -1,0 +1,32 @@
+project:
+  type: website
+  resources: 
+    - "*.html" 
+    - "*.pdf" 
+
+website:
+  title: "Air Quality Statements" 
+  bread-crumbs: true
+  repo-url: https://github.com/quarto-dev/quarto-demo
+  repo-actions: [edit, issue]  
+  navbar:
+    search: true
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - section: "Air advisories"
+        href: index.qmd
+        contents: 
+          - bulletins/bulletin_history.qmd
+      - href: measuring.qmd
+        text: How we measure
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+
