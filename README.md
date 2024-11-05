@@ -1,2 +1,2 @@
-# nr-aqadvisories-temp
-Temporary home to experiment with ways to display aq content.
+# nr-epd-aq-statements
+Repository to host Air Quality statements.
