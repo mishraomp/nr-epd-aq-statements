@@ -1,0 +1,10 @@
+---
+title: "Smokey Skies Bulletin"
+city: "Elkford"
+date: 2024-08-21
+categories:
+author: "Author"
+---
+
+[PDF](statements/2024-08-21-smoky-skies-issue.pdf)
+[HTML](statements/2024-07-25-smoky-skies-issue.html)

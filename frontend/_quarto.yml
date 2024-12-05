@@ -5,28 +5,48 @@ project:
     - "*.pdf" 
 
 website:
-  title: "Air Quality Statements" 
-  bread-crumbs: true
-  repo-url: https://github.com/quarto-dev/quarto-demo
-  repo-actions: [edit, issue]  
+  title: "Air quality advisories"
+  repo-url: https://github.com/bcgov/nr-epd-aq-statements
+  repo-actions: [source, issue]
   navbar:
     search: true
+    right:  
+      - measuring.qmd
   sidebar:
     style: "docked"
-    search: true
+    alignment: left
+    border: true
     contents:
-      - section: "Air advisories"
-        href: index.qmd
-        contents: 
-          - bulletins/bulletin_history.qmd
-      - href: measuring.qmd
-        text: How we measure
+      - section: Active advisories
+        contents: statements/*
+      - text: Historical advisories
+        href: statements.qmd
+      - section: More Topics
+        contents:
+          - text: "Air Quality Data"
+            href: https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/air-quality
+            contents:
+            - text: "Air advisories"
+              href: #
+          - text: "Air Quality Subscription Service"
+            href: https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/air-quality/air-advisories/air-quality-subscription-service
+          - text: "Air Quality Health Index"
+            href: https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/air-quality/aqhi
+          - text: "Air Quality Health Index widget"
+            href: https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/air-quality/aghi-widget
+          - text: "Latest air quality data"
+            href: https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/air-quality/current-air-quality-data
+          - text: "How we measure"
+            href: https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/air-quality/measuring
 
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
+
+
+
 
 
 

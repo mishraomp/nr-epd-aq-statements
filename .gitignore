@@ -1,5 +1,5 @@
-/.quarto/
-/_site/
+frontend/.quarto/
+frontend/_site/
 .Rhistory
 .RData
 .Ruserdata
