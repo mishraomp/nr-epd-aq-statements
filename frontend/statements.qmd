@@ -1,11 +1,12 @@
 ---
-title: "Historical Statements"
+title: "Historical advisories"
 listing:
   type: table
-  fields: [date, title, city, categories, author]
+  fields: [location, title, date, categories, contact]
   field-display-names:
     title: "Advisory Type"
-    city: "City"
+    location: "Location"
+    contact: "Contact"
   contents: "statements/*qmd"
 ---
 
