@@ -1,6 +1,7 @@
-name: Deploy to GitHub Pages On PR (Quarto)
+name: Merge to main
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
