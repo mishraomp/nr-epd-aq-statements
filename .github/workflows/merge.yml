@@ -13,23 +13,21 @@ permissions:
 
 # Uses quarto instructions and actions: https://quarto.org/docs/publishing/github-pages.html
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build-deploy:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
     steps:
-      - name: Checkout your repository using git
+      - name: Check out repository
         uses: actions/checkout@v4
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
+      - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+          path: frontend
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
