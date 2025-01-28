@@ -2,7 +2,7 @@
 title: "Smokey Skies Bulletin"
 location: "Elkford"
 date: 2024-08-21
-categories:
+categories: ssb
 author:
   - name: FName LName
     title: Senior Air Quality Meteorologist
@@ -41,7 +41,7 @@ People with pre-existing health conditions, respiratory infections such as COVID
 
 - People respond differently to smoke. Mild irritation and discomfort are common, and usually disappear when the smoke clears.
 - If you are unsure whether you need medical care, call HealthLink BC at 8-1-1.
-- If you are experiencing difficulty in breathing, chest pain or discomfort, or a severe cough, contact your health care provider, walk-in clinic, or emergency department. If you are having a medical emergency, call 9-1-1. 
+- If you are experiencing difficulty in breathing, chest pain or discomfort, or a severe cough, contact your health care provider, walk-in clinic, or emergency department. If you are having a medical emergency, call 9-1-1.
 
 **Tips to reduce your smoke exposure**
 
@@ -65,7 +65,7 @@ filter and set the fan to run continuously.
 
 **Media and public inquiries regarding air quality and this bulletin:**
 
-{{< meta contact.1.name >}}, {{< meta contact.1.title >}}, {{< meta contact.1.phone >}} 
+{{< meta contact.1.name >}}, {{< meta contact.1.title >}}, {{< meta contact.1.phone >}}
 
 **Media questions regarding health implications of wildfires:**
 

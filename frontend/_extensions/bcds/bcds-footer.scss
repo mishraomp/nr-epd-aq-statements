@@ -1,0 +1,325 @@
+/*-- scss:rules --*/
+/* This file contents unmodified from BCDS component footer */
+/* https://www2.gov.bc.ca/gov/content/digital/design-system/components/footer */
+/* CSS vars changed to SCSS vars */
+
+@import "variables.scss";
+
+.bcds-footer {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+.bcds-footer > .bcds-footer--acknowledgement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-top: $layout-border-width-large solid $theme-gold-60;
+  border-bottom: $layout-border-width-large solid $theme-gold-60;
+  background-color: $theme-gray-110;
+  padding: $layout-padding-xlarge;
+}
+
+.bcds-footer
+> .bcds-footer--acknowledgement
+> .bcds-footer--acknowledgement-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+  color: $typography-color-primary-invert;
+  font: $typography-regular-small-body;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.bcds-footer
+> .bcds-footer--acknowledgement
+> .bcds-footer--acknowledgement-text
+> p {
+  margin: $layout-margin-none;
+}
+
+.bcds-footer > .bcds-footer--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $surface-color-background-light-gray;
+  padding: $layout-padding-xlarge;
+}
+
+.bcds-footer > .bcds-footer--container > .bcds-footer--container-content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: $layout-padding-xlarge;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.bcds-footer
+> .bcds-footer--container
+> .bcds-footer--container-content
+> .bcds-footer--logo-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  column-gap: $layout-padding-xlarge;
+  row-gap: $layout-padding-medium;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* `horizontal` class is the default, when no `children` prop is passed */
+.bcds-footer
+> .bcds-footer--container
+> .bcds-footer--container-content
+> .bcds-footer--logo-links.horizontal {
+  flex-direction: row;
+}
+
+/* `vertical` class is used when a `children` prop is passed */
+.bcds-footer
+> .bcds-footer--container
+> .bcds-footer--container-content
+> .bcds-footer--logo-links.vertical {
+  flex-direction: column;
+  align-items: stretch;
+  row-gap: $layout-padding-xlarge;
+}
+
+.bcds-footer
+> .bcds-footer--container
+> .bcds-footer--container-content
+> .bcds-footer--logo-links
+> .bcds-footer--logo {
+  display: flex;
+  flex-direction: column;
+  gap: $layout-padding-large;
+  min-width: 324px;
+  width: 576px;
+}
+
+.bcds-footer
+> .bcds-footer--container
+> .bcds-footer--container-content
+> .bcds-footer--logo-links
+> .bcds-footer--logo
+> #bcgov-logo-footer {
+  width: 146px;
+  min-width: 146px;
+}
+
+.bcds-footer
+> .bcds-footer--container
+> .bcds-footer--container-content
+> .bcds-footer--logo-links
+> .bcds-footer--logo
+> p {
+  font: $typography-regular-small-body;
+  margin: $layout-margin-none;
+}
+
+.bcds-footer
+> .bcds-footer--container
+> .bcds-footer--container-content
+> .bcds-footer--logo-links
+> .bcds-footer--logo
+> p
+> a {
+  color: $typography-color-secondary;
+  font: $typography-regular-small-body;
+  text-decoration: underline;
+}
+
+.bcds-footer
+> .bcds-footer--container
+> .bcds-footer--container-content
+> .bcds-footer--logo-links
+> .bcds-footer--logo
+> p
+> a:hover {
+  text-decoration: none;
+}
+
+.bcds-footer
+> .bcds-footer--container
+> .bcds-footer--container-content
+> .bcds-footer--logo-links
+> .bcds-footer--links {
+  margin: $layout-margin-none;
+}
+
+/*
+  When Footer hasn't been passed `children`, expand the links container to take
+  up 320px, as the default links are narrower.
+*/
+.bcds-footer
+> .bcds-footer--container
+> .bcds-footer--container-content
+> .bcds-footer--logo-links.horizontal
+> .bcds-footer--links {
+  min-width: 320px;
+}
+
+.bcds-footer
+> .bcds-footer--container
+> .bcds-footer--container-content
+> .bcds-footer--logo-links
+> .bcds-footer--links
+> .bcds-footer--links-title {
+  display: block;
+  font: $typography-bold-small-body;
+  margin-bottom: $layout-padding-medium;
+  text-transform: uppercase;
+}
+
+.bcds-footer
+> .bcds-footer--container
+> .bcds-footer--container-content
+> .bcds-footer--logo-links
+> .bcds-footer--links
+> ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: $layout-padding-xlarge;
+  grid-row-gap: $layout-padding-small;
+  list-style: none;
+  margin: $layout-margin-none;
+  padding: $layout-padding-none;
+}
+
+/*
+  When a Footer has been passed `children`, the logo-links container fills the
+  full width of the container, so there's room for 4 columns of links.
+*/
+.bcds-footer
+> .bcds-footer--container
+> .bcds-footer--container-content
+> .bcds-footer--logo-links.vertical
+> .bcds-footer--links
+> ul {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.bcds-footer
+> .bcds-footer--container
+> .bcds-footer--container-content
+> .bcds-footer--logo-links
+> .bcds-footer--links
+> ul
+> li {
+  font: $typography-regular-small-body;
+}
+
+.bcds-footer
+> .bcds-footer--container
+> .bcds-footer--container-content
+> .bcds-footer--logo-links
+> .bcds-footer--links
+> ul
+> li
+> a {
+  color: $typography-color-primary;
+  text-decoration: none;
+}
+
+.bcds-footer
+> .bcds-footer--container
+> .bcds-footer--container-content
+> .bcds-footer--logo-links
+> .bcds-footer--links
+> ul
+> li
+> a:hover {
+  text-decoration: underline;
+}
+
+.bcds-footer > .bcds-footer--container > .bcds-footer--container-content > hr {
+  background-color: $surface-color-border-dark;
+  border: $layout-border-width-none;
+  height: $layout-border-width-small;
+  margin: $layout-margin-none;
+  width: 100%;
+}
+
+p.bcds-footer--copyright {
+  color: $typography-color-secondary;
+  font: $typography-regular-body;
+  margin: $layout-margin-none;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  /* Links drop beneath logo in the default configuration */
+  .bcds-footer
+  > .bcds-footer--container
+  > .bcds-footer--container-content
+  > .bcds-footer--logo-links {
+    flex-wrap: wrap;
+  }
+
+  .bcds-footer
+  > .bcds-footer--container
+  > .bcds-footer--container-content
+  > .bcds-footer--logo-links
+  > .bcds-footer--logo {
+    max-width: 324px;
+  }
+
+  /*
+    When the `children` prop is used with multiple FooterLinks components,
+    only two columns of links appear on screen at once.
+  */
+  .bcds-footer
+  > .bcds-footer--container
+  > .bcds-footer--container-content
+  > .bcds-footer--logo-links.vertical
+  > .bcds-footer--links
+  > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 575px) {
+  .bcds-footer > .bcds-footer--acknowledgement {
+    padding: $layout-padding-xlarge $layout-padding-medium;
+  }
+
+  .bcds-footer > .bcds-footer--container {
+    padding: $layout-padding-medium;
+  }
+
+  .bcds-footer > .bcds-footer--container > .bcds-footer--container-content {
+    gap: $layout-padding-medium;
+  }
+
+  .bcds-footer
+  > .bcds-footer--container
+  > .bcds-footer--container-content
+  > .bcds-footer--logo-links
+  > .bcds-footer--logo {
+    gap: $layout-padding-medium;
+  }
+
+  /*
+    When the `children` prop is used with multiple FooterLinks components,
+    only one column of links appear on screen at once.
+  */
+  .bcds-footer
+  > .bcds-footer--container
+  > .bcds-footer--container-content
+  > .bcds-footer--logo-links.vertical
+  > .bcds-footer--links
+  > ul {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

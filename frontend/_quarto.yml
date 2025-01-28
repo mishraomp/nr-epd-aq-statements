@@ -1,3 +1,6 @@
+filters:
+  - age.lua
+  - quarto
 project:
   type: bcds
   preview:

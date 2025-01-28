@@ -64,11 +64,11 @@ $support-border-color-info: #053662; // Border stroke for general/informational 
 $support-border-color-danger: #CE3E39; // Border stroke for error, failure or danger messages
 $support-border-color-success: #42814A; // Border stroke for success messages
 $support-border-color-warning: #F8BB47; // Border stroke for warning messages
-$icons-size-xsmall: 14; // Smallest icon size
-$icons-size-small: 16;
-$icons-size-medium: 20; // Default icon size
-$icons-size-large: 24;
-$icons-size-xlarge: 32; // Largest icon size
+$icons-size-xsmall: 14px; // Smallest icon size
+$icons-size-small: 16px;
+$icons-size-medium: 20px; // Default icon size
+$icons-size-large: 24px;
+$icons-size-xlarge: 32px; // Largest icon size
 $icons-color-primary: #2D2D2D; // Default colour for icons
 $icons-color-secondary: #474543; // Alternative colour for secondary/miscellaneous icons
 $icons-color-disabled: #9F9D9C; // Use only for inactive/disabled icons
@@ -79,9 +79,9 @@ $icons-color-success: #42814A; // Emphasis colour for icons in success state
 $icons-color-warning: #F8BB47; // Emphasis colour for icons in warning state
 $icons-color-primary-invert: #FFFFFF; // Default colour for icons on dark backgrounds
 $layout-border-width-none: 0;
-$layout-border-width-small: 1;
-$layout-border-width-medium: 2;
-$layout-border-width-large: 4;
+$layout-border-width-small: 1px;
+$layout-border-width-medium: 2px;
+$layout-border-width-large: 4px;
 $layout-padding-none: 0; // No padding
 $layout-padding-hair: 0.125rem; // Smallest padding value for layout
 $layout-padding-xsmall: 0.25rem;
@@ -100,10 +100,10 @@ $layout-margin-xxlarge: 2.5rem;
 $layout-margin-xxxlarge: 3rem;
 $layout-margin-huge: 3.5rem; // Largest margin value for layout
 $layout-border-radius-none: 0;
-$layout-border-radius-small: 2;
-$layout-border-radius-medium: 4;
-$layout-border-radius-large: 6;
-$layout-border-radius-circular: 9999; // Used for components with a circular radius
+$layout-border-radius-small: 2px;
+$layout-border-radius-medium: 4px;
+$layout-border-radius-large: 6px;
+$layout-border-radius-circular: 9999px; // Used for components with a circular radius
 $typography-font-families-bc-sans: 'BC Sans'; // BC Sans font. Requires BC Sans package
 $typography-line-heights-xxxdense: 1.125rem; // Smallest line height
 $typography-line-heights-xxdense: 1.313rem;
