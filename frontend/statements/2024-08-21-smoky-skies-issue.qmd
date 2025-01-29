@@ -2,7 +2,8 @@
 title: "Smokey Skies Bulletin"
 location: "Elkford"
 date: 2024-08-21
-categories: ssb
+ssb: true
+categories:
 author:
   - name: FName LName
     title: Senior Air Quality Meteorologist

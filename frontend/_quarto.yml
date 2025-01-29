@@ -1,13 +1,7 @@
-filters:
-  - age.lua
-  - quarto
 project:
   type: bcds
+  pre-render:
+    - construct-lists.py
   preview:
     port: 3000
     browser: false
-
-
-
-
-

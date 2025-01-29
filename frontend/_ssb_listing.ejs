@@ -1,0 +1,26 @@
+```{=html}
+<% if (items.length > 0) { %>
+    <table>
+        <thead>
+        <tr>
+            <td>Title</td>
+            <td>Date</td>
+            <td>Location</td>
+            <td>Categories</td>
+        </tr>
+        </thead>
+        <tbody>
+        <% for (const item of items) { %>
+            <tr>
+                <td><a href="<%- item.path %>"><%= item.title %></a></td>
+                <td><%= item.date %></td>
+                <td><%= item.location %></td>
+                <td><%= item.categories %></td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+<% } else { %>
+    <em>There are currently no smoky skies bulletins in effect.</em>
+<% } %>
+```

@@ -2,7 +2,7 @@
 title: "Historical advisories"
 listing:
   type: table
-  fields: [location, title, date, categories, author, age, recent]
+  fields: [location, title, date, categories, author]
   field-display-names:
     title: "Advisory Type"
     location: "Location"
