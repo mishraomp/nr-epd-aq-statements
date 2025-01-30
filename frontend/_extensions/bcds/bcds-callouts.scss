@@ -1,0 +1,99 @@
+/*-- scss:rules --*/
+@import "variables.scss";
+
+
+.bcds-Callout {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  padding: $layout-padding-medium $layout-padding-large;
+  border-radius: $layout-border-radius-medium $layout-border-radius-none $layout-border-radius-none $layout-border-radius-medium;
+}
+
+.bcds-Callout--Container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: $layout-margin-small;
+}
+
+.bcds-Callout--Container > .bcds-Callout--Title {
+  font: $typography-bold-large-body;
+  color: $typography-color-primary;
+}
+
+.bcds-Callout--Container > .bcds-Callout--Description {
+  font: $typography-regular-body;
+  color: $typography-color-secondary;
+}
+
+/* Theme - light grey (default) */
+.bcds-Callout.lightGrey {
+  background-color: $surface-color-background-light-gray;
+  border-left: $layout-border-width-large solid $theme-primary-blue;
+}
+
+/* Theme - light blue */
+.bcds-Callout.lightBlue {
+  background-color: $theme-blue-10;
+  border-left: $layout-border-width-large solid $theme-primary-blue;
+}
+
+/* Theme - light gold */
+.bcds-Callout.lightGold {
+  background-color: $theme-gold-10;
+  border-left: $layout-border-width-large solid $theme-primary-blue;
+}
+
+/* Theme - blue  */
+.bcds-Callout.Blue {
+  background-color: $surface-color-background-dark-blue;
+  border-left: $layout-border-width-large solid $theme-primary-gold;
+}
+
+.bcds-Callout.Blue .bcds-Callout--Title {
+  color: $typography-color-primary-invert;
+}
+
+.bcds-Callout.Blue .bcds-Callout--Description {
+  color: $typography-color-secondary-invert;
+}
+
+/* Theme - grey */
+.bcds-Callout.Grey {
+  background-color: $theme-gray-80;
+  border-left: $layout-border-width-large solid $theme-primary-gold;
+}
+
+.bcds-Callout.Grey .bcds-Callout--Title {
+  color: $typography-color-primary-invert;
+}
+
+.bcds-Callout.Grey .bcds-Callout--Description {
+  color: $typography-color-secondary-invert;
+}
+
+/* Theme - black */
+.bcds-Callout.Black {
+  background-color: $theme-gray-100;
+  border-left: $layout-border-width-large solid $theme-primary-gold;
+}
+
+.bcds-Callout.Black .bcds-Callout--Title {
+  color: $typography-color-primary-invert;
+}
+
+.bcds-Callout.Black .bcds-Callout--Description {
+  color: $typography-color-secondary-invert;
+}
+
+/* Border disabled */
+.bcds-Callout.lightGrey.noBorder,
+.bcds-Callout.lightGold.noBorder,
+.bcds-Callout.lightBlue.noBorder,
+.bcds-Callout.Blue.noBorder,
+.bcds-Callout.Grey.noBorder,
+.bcds-Callout.Black.noBorder {
+  border-left: none;
+  border-radius: $layout-border-radius-none;
+}

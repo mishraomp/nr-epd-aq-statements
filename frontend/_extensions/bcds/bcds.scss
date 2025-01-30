@@ -25,15 +25,11 @@ $backgroundcolor: $surface-color-background-white;
 
 $grid-body-width: 1100px;
 
-//$body-color: $surface-color-background-white;
 $font-family-sans-serif: $typography-font-families-bc-sans, sans-serif;
 $headings-font-weight: $typography-font-weights-bold;
 
 $navbar-bg: $surface-color-background-white;
 $navbar-fg: $typography-color-link;
-
-//$navbar-dark-hover-color: rgba($white, 1) !default;
-//$navbar-light-hover-color: rgba($black, .9) !default;
 
 $progress-height: .5rem !default;
 
@@ -100,6 +96,10 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+.quarto-title {
+  display: none;
+}
+
 hr {
   color: $theme-primary-gold;
   height: $layout-border-width-large;
@@ -113,7 +113,8 @@ hr {
     margin-right: auto;
     padding-left: 0;
     padding-right: 0;
-    max-width: 1100px;
+
+    width: 100%;
 
     .navbar-brand-container {
 
@@ -167,13 +168,15 @@ hr {
   .nav-footer-right {
     display: none;
   }
+
+  .nav-footer-center {
+    text-align: initial;
+  }
 }
 
 /* Styling sidebar to match Figma specs */
 
 #quarto-sidebar {
-
-  //line-height: $typography-line-heights-sparse;
 
   .sidebar-item {
     padding: 0;

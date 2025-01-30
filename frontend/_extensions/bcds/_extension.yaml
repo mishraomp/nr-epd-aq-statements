@@ -3,6 +3,8 @@ author: Robert Johnstone
 version: 1.0.0
 quarto-required: ">=1.6.0"
 contributes:
+  shortcodes:
+    - bcds.lua
   project:
     project:
       output-dir: _site
@@ -98,5 +100,6 @@ contributes:
         - variables.scss
         - bcds.scss
         - bcds-footer.scss
+        - bcds-callouts.scss
 
 
