@@ -30,7 +30,11 @@ SMOKY_SKIES_BULLETINS = []
 
 def process_input_files():
     for f in INPUT_FILES:
+        if not f:
+            continue  # skip empty input lines
+
         print("processing input file: {file}".format(file=f))
+
         with open(f, 'r') as file:
             contents = file.read()
             match = HEADER_REGEX.search(contents)

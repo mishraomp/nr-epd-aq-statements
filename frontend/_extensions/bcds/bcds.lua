@@ -4,14 +4,14 @@ return {
       local title = pandoc.utils.stringify(kwargs["title"])
       local variant = pandoc.utils.stringify(kwargs["variant"])
 
-      print(variant)
-
       if (variant == "") then
         variant = "lightGrey"
        end
 
+      -- todo: aria-labelledby (generate IDs)
+
       if quarto.doc.is_format("html:js") then
-        local start_code = "<div class=\"bcds-Callout ".. variant .."\">"
+        local start_code = "<div class=\"bcds-Callout ".. variant .."\" role=\"note\">"
         start_code = start_code .. "<div class=\"bcds-Callout--Container\">"
 
         if (title ~= nil) then
