@@ -128,8 +128,20 @@ hr {
         padding: 0;
 
         @media only screen and (max-width: 575px) {
-          height: 40px;
+
+          /* Replace the link with a block element having a background, to work round Quarto's single logo spec */
           border: none !important; /* override bootstrap default */
+          background-image: url(/_extensions/bcds/assets/BCID_V_rgb_pos.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 48px;
+          min-height: 48px;
+          display: block;
+
+          img.navbar-logo {
+            display: none;
+          }
         }
         @media only screen and (max-width: 991px) {
           height: 60px;
@@ -147,10 +159,6 @@ hr {
         padding-left: $layout-padding-medium;
         font-weight: $typography-font-weights-regular;
         text-transform: capitalize;
-        @media only screen and (max-width: 575px) {
-          /* hide on tiny screens*/
-          display: none;
-        }
       }
     }
 
@@ -160,6 +168,8 @@ hr {
 /* The BCDS footer component is pre-styled. Resetting the default Quarto CSS to give it space to apply its styles */
 .nav-footer {
   display: block;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 
   .nav-footer-left {
     display: none;
@@ -191,5 +201,21 @@ hr {
     background: $surface-color-background-light-blue;
     border-left: $layout-border-width-large solid $theme-blue-70;
     font-weight: $typography-font-weights-bold;
+  }
+}
+
+/*
+ Allow these elements to scroll horizontally on smaller screens
+ */
+
+.quarto-listing {
+  @media only screen and (max-width: 575px) {
+    overflow-x: scroll;
+  }
+}
+
+table {
+  @media only screen and (max-width: 575px) {
+    overflow-x: scroll;
   }
 }
