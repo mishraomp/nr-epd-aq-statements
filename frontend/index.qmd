@@ -25,28 +25,6 @@ listing:
 ::: {#ssb}
 :::
 
-::: {.callout-note}
-Quarto default callout
-:::
-
-{{< callout_start >}}
-BCDS callout - sample text, defaults
-{{< callout_end >}}
-
-
-{{< callout_start title="Titled Callout" >}}
-BCDS callout - sample text, default variant
-{{< callout_end >}}
-
-
-{{< callout_start variant="Blue">}}
-BCDS callout - sample text, blue variant
-{{< callout_end >}}
-
-{{< callout_start variant="lightBlue" title="Titled, variant">}}
-BCDS callout - sample text, light blue variant, with title
-{{< callout_end >}}
-
 ## Latest updates
 
 For the latest updates:

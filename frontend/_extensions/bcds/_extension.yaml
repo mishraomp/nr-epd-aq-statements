@@ -74,7 +74,7 @@ contributes:
         contents:
           - text: Air Quality Data
           - section: Active advisories
-            contents: statements/*
+            contents: statements
           - section: Air Quality Data
             href: https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/air-quality
             contents:
@@ -82,6 +82,8 @@ contributes:
                 href: index.qmd
               - text: Historical advisories
                 href: statements.qmd
+          - text: BCDS Shortcode Demos
+            href: shortcode_demos.qmd
           - text: Air Quality Subscription Service
             href: https://www2.gov.bc.ca/gov/content/environment/air-land-water/air/air-quality/air-advisories/air-quality-subscription-service
           - text: "Air Quality Health Index"
@@ -101,5 +103,8 @@ contributes:
         - bcds.scss
         - bcds-footer.scss
         - bcds-callouts.scss
+        - bcds-inline-alert.scss
+        - bcds-cards.scss
+        - bcds-accordion.scss
 
 

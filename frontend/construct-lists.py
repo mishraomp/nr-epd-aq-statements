@@ -15,7 +15,7 @@ These are then used in custom listings within the qmd markup
 """
 
 # editable -- consider posts less than RECENT_THRESHOLD_DAYS days old to be "recent"
-RECENT_THRESHOLD_DAYS = 14
+RECENT_THRESHOLD_DAYS = 5
 RECENTS_FILE_NAME = '_recent_statements.yaml'
 
 SSB_FILE_NAME = '_ssb.yaml'
@@ -46,12 +46,13 @@ def process_input_files():
                 entry_from_header = {
                     'path': f,
                     'title': parsed_header['title'],
+                    'type': parsed_header['type'] if 'type' in parsed_header else 'N/A',
+                    'ice': parsed_header['ice'] if 'ice' in parsed_header else 'N/A',
                     'date': parsed_header['date'] if 'date' in parsed_header else None,
                     'location': parsed_header['location'] if 'location' in parsed_header else None,
-                    'categories': str(parsed_header['categories'] or '') if 'categories' in parsed_header else None
                 }
 
-                if 'ssb' in parsed_header and parsed_header['ssb'] is True:
+                if 'type' in parsed_header and parsed_header['type'].lower() == 'ssb':
                     SMOKY_SKIES_BULLETINS.append(entry_from_header)
 
                 # not mutually exclusive with ssb
@@ -60,6 +61,8 @@ def process_input_files():
                     if age < RECENT_THRESHOLD_DAYS:
                         RECENT_STATEMENTS.append(entry_from_header)
 
+
+print(yaml.safe_dump(INPUT_FILES))
 
 process_input_files()
 

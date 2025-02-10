@@ -1,0 +1,124 @@
+/*-- scss:rules --*/
+/* This file contents unmodified from BCDS component inline alert */
+/* https://www2.gov.bc.ca/gov/content/digital/design-system/components/InlineAlert */
+/* CSS vars changed to SCSS vars */
+
+@import "variables.scss";
+
+.bcds-Inline-Alert {
+  box-shadow: $surface-shadow-medium;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: $layout-margin-small;
+  padding: $layout-padding-medium $layout-padding-large;
+}
+
+/* Alert content */
+.bcds-Inline-Alert--container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.bcds-Inline-Alert--container > .title {
+  font: $typography-bold-body;
+  color: $typography-color-primary;
+}
+
+.bcds-Inline-Alert--container > .description {
+  font: $typography-regular-body;
+  color: $typography-color-primary;
+}
+
+/* Left icon */
+.bcds-Inline-Alert--icon {
+  display: inline-flex;
+  align-self: flex-start;
+  padding-top: $layout-padding-xsmall;
+}
+
+.bcds-Inline-Alert--icon > svg {
+  min-width: $icons-size-medium;
+  height: $icons-size-medium;
+}
+
+/* Closeable */
+.bcds-Inline-Alert.closeable {
+  /*
+    Because the close icon button is removed from the document flow, we
+    manually adjust the padding to push the `--container` element off the right
+    edge of the InlineAlert.
+  */
+  padding: $layout-padding-medium 52px $layout-padding-medium $layout-padding-large;
+}
+
+.bcds-Inline-Alert--closeIcon {
+  align-self: first baseline;
+  color: $icons-color-primary;
+  position: relative;
+}
+
+.bcds-Inline-Alert--closeIcon > button {
+  position: absolute;
+  /*
+    Centers the button vertically.
+    Button height (32px) minus line-height of text (27px) divided by 2.
+  */
+  top: -2.5px;
+}
+
+.bcds-Inline-Alert--closeIcon > svg {
+  min-width: $icons-size-medium;
+  height: $icons-size-medium;
+}
+
+/* Info variant */
+.bcds-Inline-Alert.info {
+  background-color: $support-surface-color-info;
+  border: $layout-border-width-small solid $support-border-color-info;
+  border-radius: $layout-border-radius-medium;
+}
+
+.bcds-Inline-Alert.info > .bcds-Inline-Alert--icon {
+  color: $icons-color-info;
+}
+
+/* Success variant */
+.bcds-Inline-Alert.success {
+  background-color: $support-surface-color-success;
+  border: $layout-border-width-small solid $support-border-color-success;
+  border-radius: $layout-border-radius-medium;
+}
+
+.bcds-Inline-Alert.success > .bcds-Inline-Alert--icon {
+  color: $icons-color-success;
+}
+
+/* Warning variant */
+.bcds-Inline-Alert.warning {
+  background-color: $support-surface-color-warning;
+  border: $layout-border-width-small solid $support-border-color-warning;
+  border-radius: $layout-border-radius-medium;
+}
+
+.bcds-Inline-Alert.warning > .bcds-Inline-Alert--icon {
+  color: $icons-color-warning;
+}
+
+/* Danger variant */
+.bcds-Inline-Alert.danger {
+  background-color: $support-surface-color-danger;
+  border: $layout-border-width-small solid $support-border-color-danger;
+  border-radius: $layout-border-radius-medium;
+}
+
+.bcds-Inline-Alert.danger > .bcds-Inline-Alert--icon {
+  color: $icons-color-danger;
+}
+
+/* Button group */
+.bcds-Inline-Alert--container > .bcds-ButtonGroup {
+  padding-top: $layout-padding-small;
+}

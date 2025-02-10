@@ -1,0 +1,39 @@
+/*-- scss:rules --*/
+@import "variables.scss";
+@import "bcds.scss";
+
+.card {
+
+  box-shadow: $surface-shadow-medium;
+
+  &.red {
+    border-top: $layout-padding-small solid #dc143c;
+  }
+
+  &.green {
+    border-top: $layout-padding-small solid #0a3622;
+  }
+
+  &.blue {
+    border-top: $layout-padding-small solid $theme-blue-100;
+  }
+
+  h5::before {
+    border: none;
+  }
+
+  .card-image {
+    height: 4rem;
+    display: block;
+    margin: $layout-margin-small auto;
+  }
+
+  /* adjustable */
+  width: $grid-body-width / 4;
+
+  @media only screen and (max-width: 575px) {
+    /* full width looks better on small screens */
+    width: 100%;
+  }
+
+}

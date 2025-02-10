@@ -1,0 +1,35 @@
+/*-- scss:rules --*/
+@import "variables.scss";
+
+details.bcds-disclosure {
+  box-shadow: $surface-shadow-medium;
+
+  summary {
+    width: 100%;
+    background: $surface-color-background-light-gray;
+    font-weight: $typography-font-weights-bold;
+    padding: $layout-padding-medium $layout-padding-large;
+    color: $typography-color-primary;
+  }
+
+  .panel {
+    width: 100%;
+    padding: $layout-padding-medium $layout-padding-large;
+  }
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: $layout-border-radius-medium $layout-border-radius-none $layout-border-radius-none $layout-border-radius-medium;
+}
+
+
+details.bcds-disclosure[open] {
+  summary {
+    border-bottom: $layout-border-width-small solid $theme-gray-90;
+  }
+}
