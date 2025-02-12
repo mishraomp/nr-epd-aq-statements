@@ -17,7 +17,7 @@
    content will be available on the public [Github pages](https://bcgov.github.io/nr-epd-aq-statements/) site
    immediately.
 
-<img src="Contribution Flow.svg" width=600 alt='Contribution Workflow'/>
+<img src="Contribution Flow.png" alt='Contribution Workflow'/>
 
 ## Pull Request Details
 
