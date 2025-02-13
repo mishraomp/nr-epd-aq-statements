@@ -15,6 +15,7 @@ These are then used in custom listings within the qmd markup
 """
 
 # editable -- consider posts less than RECENT_THRESHOLD_DAYS days old to be "recent"
+# Hardcoded below to 1 day for smoky skies bulletins with ice = Issue metadata
 RECENT_THRESHOLD_DAYS = 5
 RECENTS_FILE_NAME = '_recent_statements.yaml'
 
@@ -53,13 +54,28 @@ def process_input_files():
                 }
 
                 if 'type' in parsed_header and parsed_header['type'].lower() == 'ssb':
-                    SMOKY_SKIES_BULLETINS.append(entry_from_header)
+                    if 'date' in parsed_header:
+                        age = (datetime.date.today() - parsed_header['date']).days
+                        threshold = RECENT_THRESHOLD_DAYS
+
+                        if 'ice' in parsed_header and parsed_header['ice'].lower() == 'issue':
+                            threshold = 1  # Only 1 day for SSB with ice = Issue
+
+                        if age < threshold:
+                            SMOKY_SKIES_BULLETINS.append(entry_from_header)
 
                 # not mutually exclusive with ssb
                 if 'date' in parsed_header:
-                    age = (datetime.date.today() - parsed_header['date']).days
-                    if age < RECENT_THRESHOLD_DAYS:
-                        RECENT_STATEMENTS.append(entry_from_header)
+                    skip = False
+
+                    # uncomment this stanza to exclude SSB from recent statements list
+                    #   if 'type' in parsed_header and parsed_header['type'].lower() == 'ssb':
+                    #      skip = True
+
+                    if not skip:
+                        age = (datetime.date.today() - parsed_header['date']).days
+                        if age < RECENT_THRESHOLD_DAYS:
+                            RECENT_STATEMENTS.append(entry_from_header)
 
 
 print(yaml.safe_dump(INPUT_FILES))
