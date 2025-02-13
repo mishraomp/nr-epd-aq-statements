@@ -17,7 +17,7 @@ return {
       local markup = "<div class=\"bcds-Callout " .. variant .. "\" role=\"note\">"
       markup = markup .. "<div class=\"bcds-Callout--Container\">"
 
-      if (title ~= nil) then
+      if (title ~= nil and title ~= "") then
         markup = markup .. "<div class=\"bcds-Callout--Title\">"
         markup = markup .. title
         markup = markup .. "</div>"
@@ -42,15 +42,27 @@ return {
 
   ["accordion_start"] = function(args, kwargs, meta)
     local title = pandoc.utils.stringify(kwargs["title"])
+    local headerClass = pandoc.utils.stringify(kwargs["headerClass"])
+    local initiallyOpen = pandoc.utils.stringify(kwargs["initiallyOpen"])
 
-    if (title == nil) then
+    if (title == nil or title == "") then
       title = "Summary"
     end
 
-    if quarto.doc.is_format("html:js") then
-      local markup = "<details class='bcds-disclosure'>"
+    if (headerClass == nil) then
+      headerClass = ''
+    end
 
-      markup = markup .. "<summary>"
+    local openAttribute = ''
+
+    if (initiallyOpen == 'true') then
+      openAttribute = 'open'
+    end
+
+    if quarto.doc.is_format("html:js") then
+      local markup = "<details class='bcds-disclosure' " .. openAttribute .. ">"
+
+      markup = markup .. "<summary class='" .. headerClass .. "'>"
       markup = markup .. title
       markup = markup .. "</summary>"
 
@@ -76,15 +88,42 @@ return {
     if quarto.doc.is_format("html:js") then
       local title = pandoc.utils.stringify(kwargs["title"])
       local variant = pandoc.utils.stringify(kwargs["variant"])
+      local logo = pandoc.utils.stringify(kwargs["logo"])
+      local useIcons = pandoc.utils.stringify(kwargs["useIcons"])
 
-      local markup = "<div class='card " .. variant .. "'>"
-      markup = markup .. "<div class='card-body'>"
+      local markup = "<div class='bcds-card " .. variant .. "'>"
 
-      if (title ~= nil) then
-        markup = markup .. "<h5 class='card-title'>"
+      local icon_variant_map = {
+        ['success'] = 'check-circle',
+        ['info'] = 'info-circle',
+        ['warning'] = 'exclamation-triangle',
+        ['danger'] = 'exclamation-octagon'
+      }
+
+      local selected_icon = nil
+
+
+      if (logo ~= nil and logo ~= "") then
+        markup = markup .. '<img src="' .. logo .. '" class="bcds-card-image" alt="logo"/>'
+      end
+
+      if (title ~= nil and title ~= "") then
+        markup = markup .. "<h5 class='bcds-card-title'>"
         markup = markup .. title
         markup = markup .. "</h5>"
       end
+
+      if (useIcons == "true") then
+        if (variant ~= nil and variant ~= "") then
+          selected_icon = icon_variant_map[variant]
+          if selected_icon ~= nil then
+            markup = markup .. '<i class="card-icon bi bi-' .. selected_icon .. ' ' .. variant .. '"></i>'
+          end
+        end
+      end
+
+      markup = markup .. "<div class='bcds-card-body'>"
+
 
       return pandoc.RawInline("html", markup)
     else
@@ -110,8 +149,25 @@ return {
       variant = "info"
     end
 
+    local icon_variant_map = {
+      ['success'] = 'check-circle',
+      ['info'] = 'info-circle',
+      ['warning'] = 'exclamation-triangle',
+      ['danger'] = 'exclamation-octagon'
+    }
+
+    local selected_icon = nil
+
+
     if quarto.doc.is_format("html:js") then
       local markup = "<div class='bcds-Inline-Alert " .. variant .. "'>"
+      if (variant ~= nil) then
+        selected_icon = icon_variant_map[variant]
+        if selected_icon ~= nil then
+          markup = markup .. '<i class="bcds-Inline-Alert--icon bi bi-' .. selected_icon .. ' ' .. variant .. '"></i>'
+        end
+      end
+
       markup = markup .. "<div class='bcds-Inline-Alert--container'>"
 
       if (title ~= nil) then

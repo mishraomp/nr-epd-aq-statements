@@ -34,6 +34,9 @@ $navbar-fg: $typography-color-link;
 $progress-height: .5rem !default;
 
 
+$bs-card-spacer-y: 0;
+$bs-card-spacer-x: 0;
+
 body {
   -webkit-font-smoothing: antialiased;
 }
@@ -84,6 +87,7 @@ body {
 /*-- scss:rules --*/
 h1, h2, h3, h4, h5, h6 {
   border: none;
+  line-height: $typography-line-heights-sparse;
 
   &:before {
     content: ' ';
@@ -91,7 +95,8 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     border-bottom: $layout-padding-small solid $theme-primary-gold;
     padding: 0;
-    margin: 0;
+    margin: 0 0 $layout-padding-small;
+    //margin: 0;
   }
 
 }

@@ -5,11 +5,35 @@ details.bcds-disclosure {
   box-shadow: $surface-shadow-medium;
 
   summary {
+    list-style: none;
+
     width: 100%;
     background: $surface-color-background-light-gray;
     font-weight: $typography-font-weights-bold;
     padding: $layout-padding-medium $layout-padding-large;
     color: $typography-color-primary;
+
+    position: relative;
+  }
+
+  summary::-webkit-details-marker {
+    display: none
+  }
+
+  summary::after {
+
+    font-family: bootstrap-icons !important;
+    font-weight: normal;
+    font-variant: normal !important;
+
+    position: absolute;
+    right: $layout-padding-medium;
+
+    content: '\f285';
+  }
+
+  &[open] summary::after {
+    content: '\f282';
   }
 
   .panel {
@@ -24,12 +48,7 @@ details.bcds-disclosure {
 
   padding: 0;
   box-sizing: border-box;
+  border: $layout-border-width-small solid $surface-color-border-default;
   border-radius: $layout-border-radius-medium $layout-border-radius-none $layout-border-radius-none $layout-border-radius-medium;
 }
 
-
-details.bcds-disclosure[open] {
-  summary {
-    border-bottom: $layout-border-width-small solid $theme-gray-90;
-  }
-}
