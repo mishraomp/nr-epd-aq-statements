@@ -40,6 +40,27 @@ return {
     end
   end,
 
+  ["accordion_controls"] = function(args, kwargs, meta)
+    if quarto.doc.is_format("html:js") then
+      local markup = ""
+
+      markup = markup .. "<button class='btn' type='button' " ..
+          "onclick='BCDSExpandAll()'>" ..
+          "Expand All" ..
+          "</button>"
+
+      markup = markup .. "<button class='btn' type='button' " ..
+          "onclick='BCDSCollapseAll()'>" ..
+          "Collapse All" ..
+          "</button>"
+
+
+      return pandoc.RawInline("html", markup)
+    else
+      return pandoc.Null()
+    end
+  end,
+
   ["accordion_start"] = function(args, kwargs, meta)
     local title = pandoc.utils.stringify(kwargs["title"])
     local headerClass = pandoc.utils.stringify(kwargs["headerClass"])

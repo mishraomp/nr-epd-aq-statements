@@ -97,6 +97,22 @@ contributes:
   formats:
     html:
       toc: false
+      include-before-body:
+        text: |
+          <script>
+            function BCDSCollapseAll() {
+              const elements = document.getElementsByClassName('bcds-disclosure');
+              for (let i=0; i<elements.length; i++) {
+                elements.item(i).removeAttribute('open');
+              }
+            }
+            function BCDSExpandAll() {
+              const elements = document.getElementsByClassName('bcds-disclosure');
+              for (let i=0; i<elements.length; i++) {
+                elements.item(i).setAttribute('open', true);
+              }
+            }
+          </script>
       theme:
         - minimal
         - variables.scss

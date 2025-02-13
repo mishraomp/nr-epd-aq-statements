@@ -26,6 +26,8 @@ BCDS callout - sample text, light blue variant, with title
 
 ## Accordions
 
+{{< accordion_controls >}}
+
 {{< accordion_start title="Accordion Example - Continuous Monitoring" >}}
 In continuous monitoring, air quality is constantly measured by drawing air in through various tubes that are connected to data loggers that automatically transmit the data to a central MOE database. The data is automatically checked for errors and is published hourly on the Current Air Data page, where it is available to the public, and used to calculate the Air Quality Health Index (AQHI).
 
