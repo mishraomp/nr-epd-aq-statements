@@ -1,0 +1,192 @@
+---
+title: "Shortcode Demonstrations"
+---
+
+## Callouts
+
+::: {.callout-note}
+Quarto default callout
+:::
+
+{{< callout_start >}}
+BCDS callout - sample text, defaults
+{{< callout_end >}}
+
+{{< callout_start title="Titled Callout" >}}
+BCDS callout - sample text, default variant
+{{< callout_end >}}
+
+{{< callout_start variant="Blue">}}
+BCDS callout - sample text, blue variant
+{{< callout_end >}}
+
+{{< callout_start variant="lightBlue" title="Titled, variant">}}
+BCDS callout - sample text, light blue variant, with title
+{{< callout_end >}}
+
+## Accordions
+
+{{< accordion_controls >}}
+
+{{< accordion_start title="Accordion Example - Continuous Monitoring" >}}
+In continuous monitoring, air quality is constantly measured by drawing air in through various tubes that are connected to data loggers that automatically transmit the data to a central MOE database. The data is automatically checked for errors and is published hourly on the Current Air Data page, where it is available to the public, and used to calculate the Air Quality Health Index (AQHI).
+
+This data is useful for providing real-time information and for calculating indexes. However, until it goes through the MOE's data validation process, it is still considered raw data and should not be used for comparing to air quality guidelines or objectives.
+
+The province uses a wide range of automated instruments to collect and measure air quality data, including the following (with instrument acronyms and parameters measured in parenthesis):
+
+-   Tempered Element Oscillating Microbalance (TEOM) (PM2.5 and PM10)
+-   Beta AttenuatedMonitoring (BAM) (PM2.5)
+-   UV Photometry (ozone)
+-   Chemiluminscence (nitrogen dioxide)
+-   UV Fluorescence (sulphur dioxide)
+-   Nondispersive Infrared Photometry (carbon monoxide)
+-   Pulsed Fluorescence (total reduced sulphur or H2S)
+{{< accordion_end >}}
+
+{{< accordion_start title="Accordion Example - Initially Open" initiallyOpen="true">}}
+In continuous monitoring, air quality is constantly measured by drawing air in through various tubes that are connected to data loggers that automatically transmit the data to a central MOE database. The data is automatically checked for errors and is published hourly on the Current Air Data page, where it is available to the public, and used to calculate the Air Quality Health Index (AQHI).
+
+This data is useful for providing real-time information and for calculating indexes. However, until it goes through the MOE's data validation process, it is still considered raw data and should not be used for comparing to air quality guidelines or objectives.
+
+The province uses a wide range of automated instruments to collect and measure air quality data, including the following (with instrument acronyms and parameters measured in parenthesis):
+
+-   Tempered Element Oscillating Microbalance (TEOM) (PM2.5 and PM10)
+-   Beta AttenuatedMonitoring (BAM) (PM2.5)
+-   UV Photometry (ozone)
+-   Chemiluminscence (nitrogen dioxide)
+-   UV Fluorescence (sulphur dioxide)
+-   Nondispersive Infrared Photometry (carbon monoxide)
+-   Pulsed Fluorescence (total reduced sulphur or H2S)
+{{< accordion_end >}}
+
+{{< accordion_start title="Accordion Example - Initially Open, Header" initiallyOpen="true" headerClass="h3">}}
+In continuous monitoring, air quality is constantly measured by drawing air in through various tubes that are connected to data loggers that automatically transmit the data to a central MOE database. The data is automatically checked for errors and is published hourly on the Current Air Data page, where it is available to the public, and used to calculate the Air Quality Health Index (AQHI).
+
+This data is useful for providing real-time information and for calculating indexes. However, until it goes through the MOE's data validation process, it is still considered raw data and should not be used for comparing to air quality guidelines or objectives.
+
+The province uses a wide range of automated instruments to collect and measure air quality data, including the following (with instrument acronyms and parameters measured in parenthesis):
+
+-   Tempered Element Oscillating Microbalance (TEOM) (PM2.5 and PM10)
+-   Beta AttenuatedMonitoring (BAM) (PM2.5)
+-   UV Photometry (ozone)
+-   Chemiluminscence (nitrogen dioxide)
+-   UV Fluorescence (sulphur dioxide)
+-   Nondispersive Infrared Photometry (carbon monoxide)
+-   Pulsed Fluorescence (total reduced sulphur or H2S)
+{{< accordion_end >}}
+
+
+{{< accordion_start title="Accordion Example - Header" headerClass="h3">}}
+In continuous monitoring, air quality is constantly measured by drawing air in through various tubes that are connected to data loggers that automatically transmit the data to a central MOE database. The data is automatically checked for errors and is published hourly on the Current Air Data page, where it is available to the public, and used to calculate the Air Quality Health Index (AQHI).
+
+This data is useful for providing real-time information and for calculating indexes. However, until it goes through the MOE's data validation process, it is still considered raw data and should not be used for comparing to air quality guidelines or objectives.
+
+The province uses a wide range of automated instruments to collect and measure air quality data, including the following (with instrument acronyms and parameters measured in parenthesis):
+
+-   Tempered Element Oscillating Microbalance (TEOM) (PM2.5 and PM10)
+-   Beta AttenuatedMonitoring (BAM) (PM2.5)
+-   UV Photometry (ozone)
+-   Chemiluminscence (nitrogen dioxide)
+-   UV Fluorescence (sulphur dioxide)
+-   Nondispersive Infrared Photometry (carbon monoxide)
+-   Pulsed Fluorescence (total reduced sulphur or H2S)
+{{< accordion_end >}}
+
+
+## Cards
+
+{{< card_start title="Titled Card">}}
+card contents
+{{< card_end >}}
+
+{{< card_start title="Red Card" variant="danger">}}
+danger card contents
+{{< card_end >}}
+
+{{< card_start title="Red Card" variant="danger" useIcons="true">}}
+danger card contents, icon
+{{< card_end >}}
+
+{{< card_start title="Success Card" variant="success">}}
+success card contents
+{{< card_end >}}
+
+{{< card_start title="Success Card" variant="success" useIcons="true">}}
+success card contents, icons
+{{< card_end >}}
+
+{{< card_start title="Info Card" variant="info">}}
+info card contents
+{{< card_end >}}
+
+{{< card_start title="Info Card" variant="info" useIcons="true">}}
+info card contents, icons enabled
+{{< card_end >}}
+
+{{< card_start title="Warning Card" variant="warning">}}
+warning card contents
+{{< card_end >}}
+
+{{< card_start title="Warning Card" variant="warning" useIcons="true">}}
+warning card contents, icons enabled
+{{< card_end >}}
+
+
+{{< card_start title="Info Image Card" variant="info" logo="/_extensions/bcds/assets/BCID_V_rgb_pos.png" >}}
+info with logo card contents
+{{< card_end >}}
+
+{{< card_start title="Info Image Card" variant="info" logo="/_extensions/bcds/assets/BCID_V_rgb_pos.png" >}}
+info with logo card contents
+
+[Link Example](https://github.com/bcgov/nr-epd-aq-statements/)
+{{< card_end >}}
+
+{{< card_start title="Warning Image Card" variant="warning" logo="/_extensions/bcds/assets/BCID_V_rgb_pos.png" useIcons="true" >}}
+Warning with logo card contents and icons
+
+[Link Example](https://github.com/bcgov/nr-epd-aq-statements/)
+{{< card_end >}}
+
+{{< card_start logo="/_extensions/bcds/assets/BCID_V_rgb_pos.png" >}}
+untitled with logo card contents
+{{< card_end >}}
+
+{{< card_start variant="danger">}}
+untitled danger card with logo card contents
+{{< card_end >}}
+
+{{< card_start>}}
+untitled card contents
+{{< card_end >}}
+
+## Inline Alerts
+
+{{< inline_alert_start title="Titled Alert">}}
+Alert contents
+{{< inline_alert_end >}}
+
+{{< inline_alert_start>}}
+Untitled alert contents
+{{< inline_alert_end >}}
+
+{{< inline_alert_start variant="warning">}}
+Untitled alert contents, warning
+{{< inline_alert_end >}}
+
+{{< inline_alert_start variant="warning">}}
+Untitled alert contents, warning
+{{< inline_alert_end >}}
+
+{{< inline_alert_start variant="danger">}}
+Untitled alert contents, danger
+{{< inline_alert_end >}}
+
+{{< inline_alert_start variant="success">}}
+Untitled alert contents, success
+{{< inline_alert_end >}}
+
+{{< inline_alert_start variant="info">}}
+Untitled alert contents, info (default)
+{{< inline_alert_end >}}

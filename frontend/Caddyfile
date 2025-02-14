@@ -1,0 +1,23 @@
+{
+    auto_https off
+}
+:3000
+
+root * _site
+file_server
+
+log {
+  level WARN
+}
+encode gzip
+
+route {
+  header /* Cache-Control max-age=3
+}
+
+route {
+  try_files {path} /index.html
+  header /index.html {
+    Cache-Control max-age=0,no-cache,no-store,must-revalidate
+  }
+}

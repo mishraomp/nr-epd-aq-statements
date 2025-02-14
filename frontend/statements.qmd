@@ -7,7 +7,7 @@ listing:
     title: "Advisory Type"
     location: "Location"
     author: "Contact"
-  contents: "statements/*qmd"
+  contents: "statements/**/*md"
 ---
 
 <!-- Table of all statements: https://quarto.org/docs/websites/website-listings.html -->

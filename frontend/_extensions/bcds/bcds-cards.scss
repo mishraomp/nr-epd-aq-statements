@@ -1,0 +1,95 @@
+/*-- scss:rules --*/
+@import "variables.scss";
+@import "bcds.scss";
+
+.bcds-card {
+
+  padding: $layout-padding-small $layout-padding-small;
+  position: relative;
+
+  .card-icon {
+    display: inline-block;
+    right: $layout-padding-small;
+    top: $layout-padding-small;
+    margin-left: $layout-margin-medium;
+    position: absolute;
+    padding: 0;
+  }
+
+  box-shadow: $surface-shadow-medium;
+  border-radius: $layout-border-radius-medium;
+
+  &.danger {
+    border-top: $layout-padding-small solid $support-border-color-danger;
+
+    i.danger {
+      color: $support-border-color-danger;
+    }
+  }
+
+  &.success {
+    border-top: $layout-padding-small solid $support-border-color-success;
+
+    i.success {
+      color: $support-border-color-success;
+    }
+  }
+
+  &.info {
+    border-top: $layout-padding-small solid $support-border-color-info;
+
+    i.info {
+      color: $support-border-color-info;
+    }
+  }
+
+  &.warning {
+    border-top: $layout-padding-small solid $support-border-color-warning;
+
+    i.warning {
+      color: $support-border-color-warning;
+    }
+  }
+
+  .bcds-card-title {
+    display: inline-block;
+  }
+
+  h5::before {
+    border: none;
+  }
+
+  .bcds-card-image {
+
+    height: 4rem;
+    display: block;
+    padding: 0;
+    //margin: $layout-margin-small 0 auto;
+  }
+
+  /* adjustable */
+  width: $grid-body-width / 4;
+
+  @media only screen and (max-width: 575px) {
+    /* full width looks better on small screens */
+    width: 100%;
+  }
+
+  .bcds-card-body {
+
+    a {
+
+      &::after {
+        font-family: bootstrap-icons !important;
+        text-decoration: none !important;
+
+        padding-left: $layout-padding-small;
+
+        display: inline-block;
+        vertical-align: middle;
+        content: '\f285';
+      }
+    }
+  }
+
+}
