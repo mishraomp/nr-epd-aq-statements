@@ -20,17 +20,24 @@ jobs:
     runs-on: ubuntu-24.04
     permissions:
       contents: write
+    defaults:
+      run:
+        working-directory: ./frontend
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Render and Publish
-        uses: quarto-dev/quarto-actions/publish@v2
+      - name: Render Quarto Project
+        shell: bash
+        run: |
+          quarto render . --output-dir ./build
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          target: gh-pages
-          path: frontend
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          folder: frontend/build
+          branch: gh-pages
+          clean-exclude: pr-preview/
+          single-commit: true # Drop unnecessary commit history from gh-pages
+          force: true # Set to false if we start losing PR deployment previews
